@@ -1,0 +1,470 @@
+// Sass functions
+$breakpoint: 767px;
+@mixin sp {
+  @media screen and (max-width: $breakpoint) {
+    @content
+  }
+};
+
+/* base layout */
+body{
+  font-family: 'Pacifico', cursive;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+*{
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+a{
+  cursor: pointer;
+}
+
+img{
+  max-width: 100%;
+}
+
+.content-inner{
+  width: 1152px;
+  margin: 0 auto;
+
+  @include sp{
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.section{
+  padding: 100px 0;
+
+  @include sp{
+    padding: 80px 0;
+  }
+}
+
+.sub-title{
+  text-align: center;
+  font-size: 3em;
+
+  @include sp{
+    font-size: 2em;
+  }
+}
+
+/* this part belongs to header */
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-list{
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+}
+
+.nav-item{
+  padding: .5em;
+}
+
+.nav-item a{
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  color: #ffff;
+  transition: 0.2s color ease-in ;
+
+  @include sp{
+    font-size: 1.5em;
+  }
+}
+
+.nav-item.on a{
+  color: #000;
+}
+/* from here starts the main visual */
+.main-visual{
+  position: relative;
+  height: 100vh;
+}
+
+.main-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  font-size: 6em;
+  color: #ffff;
+  
+  @include sp{
+    font-size: 3em;
+  }
+}
+
+.main-title::after{
+  display: block;
+  content: 'WEB DEVELOPPER & MARKETER';
+  font-family: 'Oswald', sans-serif;
+}
+
+/* from here about me section */
+#about .sub-title{
+  color: #fff;
+}
+
+.profile-topic{
+  color: #fff;
+  font-size: 35px;
+
+  @include sp{
+    font-size: 25px;
+  }
+}
+
+.profile-container{
+  width: 300px;
+  text-align: center;
+  position: relative;
+  margin: 100px auto 0;
+
+  @include sp{
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.profile-move-wrapper{
+  width: 300px;
+  top: 0;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 2s ease-out;
+
+  @include sp{
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.profile-move-wrapper.default{
+  position: static;
+  transform: translateX(0);
+}
+
+.profile-move-wrapper.on{
+  opacity: 1;
+}
+
+.profile-pic-wrapper{
+  overflow: hidden;
+}
+
+.profile-pic-wrapper img{
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+.profile-content{
+  color: #fff;
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+}
+
+// from here starts the skills section
+#skills{
+  background-color: #fff;
+}
+
+.skill-container{
+  display: flex;
+  flex-wrap: wrap;
+
+  @include sp{
+    display: block;
+  }
+}
+
+.skill-block{
+  margin-top: 100px;
+  width: 50%;
+
+  @include sp{
+    width: 100%;
+  }
+}
+
+.skill-heading{
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.skill-wrapper{
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+}
+
+.skill-bar{
+  width: 90%;
+  height: 24px;
+  position: relative;
+  background-color: #cec5c5;
+  border-radius: 5px;
+  // padding: 0 10px;
+
+  .skill-bar-score{
+    display: block;
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    border-radius: 5px;
+    transition: 2s all ease-in-out;
+  }
+
+  .skill-point{
+    position: relative;
+    padding: 0 10px;
+    z-index: 1;
+    color: #fff;
+  }
+}
+
+.skill-title{
+  font-size: 20px;
+  padding-bottom: 10px;
+  display: block;
+}
+
+/* from here starts the works section */
+#works{
+  background-color: #fff;
+}
+
+.card-container{
+  width: 940px;
+  margin: 100px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include sp{
+    display: block;
+    width: 100%;
+  }
+}
+
+.card-link{
+  display: block;
+  /* min-height: 400px; */
+  border-radius: 10px;
+  transition: box-shadow ease-in 0.5s;
+}
+
+.card-link:hover{
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.card{
+  width: 300px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+
+  @include sp{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+}
+
+.card:not(:nth-child(3n)){
+  margin-right: 20px;
+
+  @include sp{
+    margin-right: auto;
+  }
+}
+
+.card-title{
+  margin-top: 20px;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.img-wrapper img{
+  border-radius: 10px;
+}
+
+/* from here belongs to contact section */
+#contact .sub-title{
+  color: #fff;
+  position: relative;
+}
+
+#contact .sub-title::after{
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  content: 'You can contact me with the following media';
+  text-align: center;
+  font-size: 25px;
+
+  @include sp{
+    font-size: 20px;
+  }
+}
+
+.contact-container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
+}
+
+.sns-wrapper{
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: font-size ease-in 1s;
+}
+
+.sns-wrapper:nth-child(1).on{
+  animation: slideIn 2s linear 1 forwards;
+}
+.sns-wrapper:nth-child(2).on{
+  animation: slideIn 2s linear 0.5s 1 forwards;
+}
+.sns-wrapper:nth-child(3).on{
+  animation: slideIn 2s linear 1s 1 forwards;
+}
+
+.sns-icon{
+  display: inline-block;
+  font-size: 100px;
+  color: #fff;
+
+  @include sp{
+    font-size: 80px;
+  }
+}
+
+.sns-wrapper .instagram .sns-icon{
+  color: #CF2E92;//非対応のブラウザでの文字色を設定
+  background: -webkit-linear-gradient(0deg, #4C64D3, #CF2E92,#F26939,#FFDD83);//背景色にグラデーションを指定
+  -webkit-background-clip: text;//テキストでくり抜く
+  -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+}
+
+.sns-wrapper .facebook .sns-icon{
+  color: #3b5998;
+}
+
+.sns-wrapper .google .sns-icon{
+  color: #fff;
+  background: -webkit-linear-gradient(top, #4285F4 0%, #0F9D58 25%, #F4B400 50%, #DB4437 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer{
+  text-align: center;
+  color: #fff;
+  padding: 50px 0;
+}
+
+/* from here belongs to the loading animation */
+.layer{
+  height: 100vh;
+  background-color: rgb(44, 42, 42);
+  transition: transform 1s ease-out;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.loader-wrapper{
+  width: 85px;
+  height: 85px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.ball{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffff;
+}
+
+.ball:nth-child(1){
+  top: 0;
+  left: 39%;
+  animation: loading 1s linear 0s infinite alternate-reverse both;
+}
+.ball:nth-child(2){
+  top: 39%;
+  right: 0;
+  animation: loading 1s linear 0.2s infinite alternate-reverse both;
+}
+.ball:nth-child(3){
+  bottom: 0;
+  left: 39%;
+  animation: loading 1s linear 0.3s infinite alternate-reverse both;
+}
+.ball:nth-child(4){
+  top: 39%;
+  left: 0;
+  animation: loading 1s linear 0.4s infinite alternate-reverse both;
+}
+.ball:nth-child(5){
+  top: 12%;
+  left: 12%;
+  animation: loading 1s linear 0.5s infinite alternate-reverse both;
+}
+.ball:nth-child(6){
+  top: 12%;
+  right: 12%;
+  animation: loading 1s linear 0.6s infinite alternate-reverse both;
+}
+.ball:nth-child(7){
+  bottom: 12%;
+  right: 12%;
+  animation: loading 1s linear 0.7s infinite alternate-reverse both;
+}
+.ball:nth-child(8){
+  bottom: 12%;
+  left: 12%;
+  animation: loading 1s linear 0.8s infinite alternate-reverse both;
+}
+
+/* animation definition */
+@keyframes loading{
+  from{
+    transform: scale(1);
+    opacity: 1;
+  }
+  to{
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn{
+  from{
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
