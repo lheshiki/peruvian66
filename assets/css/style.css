@@ -187,6 +187,13 @@ img {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 767px) {
+  .profile-pic-wrapper img {
+    width: 80%;
+    height: auto;
+  }
+}
+
 .profile-content {
   color: #fff;
   font-size: 25px;

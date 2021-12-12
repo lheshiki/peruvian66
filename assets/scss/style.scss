@@ -167,6 +167,11 @@ img{
 .profile-pic-wrapper img{
   margin-top: 20px;
   border-radius: 50%;
+
+  @include sp{
+    width: 80%;
+    height: auto;
+  }
 }
 
 .profile-content{
