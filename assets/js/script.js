@@ -1,3 +1,9 @@
+
+
+// Polyfill for smoothscroll
+// import smoothscroll from 'smoothscroll-polyfill';
+// smoothscroll.polyfill();
+
 // Header font-color change
 let skillsSec = document.querySelector('#skills');
 let navItems = document.querySelectorAll('.nav-item');
