@@ -22,23 +22,23 @@ window.addEventListener('scroll',function () {
 });
 
 // smoothscroll
-function smoothScroll(link) {
-  link.addEventListener('click',function (e) {
-    e.preventDefault();
-    let address = link.getAttribute('href');
-    let target = document.querySelector(address);
-    let targetY = target.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({
-      top:targetY,
-      behavior:'smooth'
-    });
-  })
-}
+// function smoothScroll(link) {
+//   link.addEventListener('click',function (e) {
+//     e.preventDefault();
+//     let address = link.getAttribute('href');
+//     let target = document.querySelector(address);
+//     let targetY = target.getBoundingClientRect().top + window.pageYOffset;
+//     window.scrollTo({
+//       top:targetY,
+//       behavior:'smooth'
+//     });
+//   })
+// }
 
-let links = document.querySelectorAll('.nav-item a');
-links.forEach(link => {
-  smoothScroll(link);
-})
+// let links = document.querySelectorAll('.nav-item a');
+// links.forEach(link => {
+//   smoothScroll(link);
+// })
 
 
 // declaration of the windowHeight
