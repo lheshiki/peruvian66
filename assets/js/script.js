@@ -5,29 +5,29 @@
 // kick off the polyfill!
 // smoothscroll.polyfill();
 
-// document.addEventListener("click", e => {
-//   const target = e.target;
-//   console.log(target);
-//   // clickした要素がclass属性、js-smooth-scrollを含まない場合は処理を中断
-//   if (!target.classList.contains("js-smooth-scroll")) return;
-//   console.log(true);
-//   e.preventDefault();
-//   // const targetId = target.hash;
-//   // console.log(targetID);
-//   const targetElement = document.querySelector(targetId);
-//   // 画面上部から要素までの距離
-//   const rectTop = targetElement.getBoundingClientRect().top;
-//   // 現在のスクロール距離
-//   const offsetTop = window.pageYOffset;
-//   // スクロール位置に持たせるバッファ
-//   const buffer = 50;
-//   const top = rectTop + offsetTop - buffer;
+document.addEventListener("click", e => {
+  const target = e.target;
+  console.log(target);
+  // clickした要素がclass属性、js-smooth-scrollを含まない場合は処理を中断
+  if (!target.classList.contains("js-smooth-scroll")) return;
+  console.log(true);
+  e.preventDefault();
+  const targetId = target.hash;
+ 
+  const targetElement = document.querySelector(targetId);
+  // 画面上部から要素までの距離
+  const rectTop = targetElement.getBoundingClientRect().top;
+  // 現在のスクロール距離
+  const offsetTop = window.pageYOffset;
+  // スクロール位置に持たせるバッファ
+  const buffer = 50;
+  const top = rectTop + offsetTop - buffer;
 
-//   window.scrollTo({
-//     top,
-//     behavior: "smooth"
-//   });
-// });
+  window.scrollTo({
+    top,
+    behavior: "smooth"
+  });
+});
 
 // Header font-color change
 let skillsSec = document.querySelector('#skills');
@@ -47,23 +47,23 @@ window.addEventListener('scroll',function () {
 });
 
 // // smoothscroll
-function smoothScroll(link) {
-  link.addEventListener('click',function (e) {
-    e.preventDefault();
-    let address = link.getAttribute('href');
-    let target = document.querySelector(address);
-    let targetY = target.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({
-      top:targetY,
-      behavior:'smooth'
-    });
-  })
-}
+// function smoothScroll(link) {
+//   link.addEventListener('click',function (e) {
+//     e.preventDefault();
+//     let address = link.getAttribute('href');
+//     let target = document.querySelector(address);
+//     let targetY = target.getBoundingClientRect().top + window.pageYOffset;
+//     window.scrollTo({
+//       top:targetY,
+//       behavior:'smooth'
+//     });
+//   })
+// }
 
-let links = document.querySelectorAll('.nav-item a');
-links.forEach(link => {
-  smoothScroll(link);
-})
+// let links = document.querySelectorAll('.nav-item a');
+// links.forEach(link => {
+//   smoothScroll(link);
+// })
 
 
 // declaration of the windowHeight
