@@ -1,8 +1,4 @@
 /* base layout */
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Pacifico', cursive;
   font-size: 62.5%;
