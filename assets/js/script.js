@@ -7,10 +7,8 @@
 
 document.addEventListener("click", e => {
   const target = e.target;
-  console.log(target);
   // clickした要素がclass属性、js-smooth-scrollを含まない場合は処理を中断
   if (!target.classList.contains("js-smooth-scroll")) return;
-  console.log(true);
   e.preventDefault();
   const targetId = target.hash;
  
@@ -45,25 +43,6 @@ window.addEventListener('scroll',function () {
     });
   }
 });
-
-// // smoothscroll
-// function smoothScroll(link) {
-//   link.addEventListener('click',function (e) {
-//     e.preventDefault();
-//     let address = link.getAttribute('href');
-//     let target = document.querySelector(address);
-//     let targetY = target.getBoundingClientRect().top + window.pageYOffset;
-//     window.scrollTo({
-//       top:targetY,
-//       behavior:'smooth'
-//     });
-//   })
-// }
-
-// let links = document.querySelectorAll('.nav-item a');
-// links.forEach(link => {
-//   smoothScroll(link);
-// })
 
 
 // declaration of the windowHeight
