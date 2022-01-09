@@ -143,3 +143,12 @@ bubbly({
   blur:1,
   bubbles:100
 });
+
+switch (key) {
+  case value:
+    
+    break;
+
+  default:
+    break;
+}
