@@ -1,13 +1,12 @@
 /* base layout */
 body {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 62.5%;
   line-height: 1.5;
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 16px;
 }
 
@@ -20,10 +19,9 @@ img {
 }
 
 .content-inner {
-  width: 1152px;
+  max-width: 1152px;
   margin: 0 auto;
 }
-
 @media screen and (max-width: 767px) {
   .content-inner {
     width: 100%;
@@ -33,9 +31,8 @@ img {
 
 .section {
   padding: 100px 0;
-  min-width: 1125px;
+  margin: 0 auto;
 }
-
 @media screen and (max-width: 767px) {
   .section {
     padding: 80px 0;
@@ -46,10 +43,9 @@ img {
 .sub-title {
   text-align: center;
   font-size: 3em;
-  width: 1152px;
+  max-width: 1152px;
   margin: 0 auto;
 }
-
 @media screen and (max-width: 767px) {
   .sub-title {
     font-size: 2em;
@@ -65,26 +61,21 @@ img {
 }
 
 .nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   padding: 1em 0;
 }
 
 .nav-item {
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .nav-item a {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 2em;
-  color: #ffff;
-  -webkit-transition: 0.2s color ease-in;
+  color: white;
   transition: 0.2s color ease-in;
 }
-
 @media screen and (max-width: 767px) {
   .nav-item a {
     font-size: 1.5em;
@@ -100,7 +91,6 @@ img {
   position: relative;
   height: 100vh;
 }
-
 @media screen and (max-width: 767px) {
   .main-visual {
     width: 100%;
@@ -113,12 +103,10 @@ img {
   top: 50%;
   left: 50%;
   text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: 6em;
-  color: #ffff;
+  color: white;
 }
-
 @media screen and (max-width: 767px) {
   .main-title {
     font-size: 3em;
@@ -127,8 +115,8 @@ img {
 
 .main-title::after {
   display: block;
-  content: 'WEB DEVELOPPER & MARKETER';
-  font-family: 'Oswald', sans-serif;
+  content: "WEB DEVELOPPER & MARKETER";
+  font-family: "Oswald", sans-serif;
 }
 
 /* from here about me section */
@@ -140,7 +128,6 @@ img {
   color: #fff;
   font-size: 35px;
 }
-
 @media screen and (max-width: 767px) {
   .profile-topic {
     font-size: 25px;
@@ -153,7 +140,6 @@ img {
   position: relative;
   margin: 100px auto 0;
 }
-
 @media screen and (max-width: 767px) {
   .profile-container {
     width: 100%;
@@ -167,12 +153,9 @@ img {
   left: 50%;
   position: absolute;
   opacity: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-transition: opacity 2s ease-out;
+  transform: translateX(-50%);
   transition: opacity 2s ease-out;
 }
-
 @media screen and (max-width: 767px) {
   .profile-move-wrapper {
     width: 100%;
@@ -182,8 +165,7 @@ img {
 
 .profile-move-wrapper.default {
   position: static;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 .profile-move-wrapper.on {
@@ -198,7 +180,6 @@ img {
   margin-top: 20px;
   border-radius: 50%;
 }
-
 @media screen and (max-width: 767px) {
   .profile-pic-wrapper img {
     width: 80%;
@@ -209,7 +190,7 @@ img {
 .profile-content {
   color: #fff;
   font-size: 25px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 #skills {
@@ -217,13 +198,9 @@ img {
 }
 
 .skill-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 @media screen and (max-width: 767px) {
   .skill-container {
     display: block;
@@ -234,7 +211,6 @@ img {
   margin-top: 100px;
   width: 50%;
 }
-
 @media screen and (max-width: 767px) {
   .skill-block {
     width: 100%;
@@ -242,13 +218,13 @@ img {
 }
 
 .skill-heading {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   text-align: center;
   font-size: 25px;
 }
 
 .skill-wrapper {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin-top: 20px;
 }
 
@@ -259,7 +235,6 @@ img {
   background-color: #cec5c5;
   border-radius: 5px;
 }
-
 .skill-bar .skill-bar-score {
   display: block;
   width: 0%;
@@ -269,10 +244,8 @@ img {
   left: 0;
   background-color: #000;
   border-radius: 5px;
-  -webkit-transition: 2s all ease-in-out;
   transition: 2s all ease-in-out;
 }
-
 .skill-bar .skill-point {
   position: relative;
   padding: 0 10px;
@@ -292,15 +265,11 @@ img {
 }
 
 .card-container {
-  width: 940px;
+  max-width: 940px;
   margin: 100px auto 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 @media screen and (max-width: 767px) {
   .card-container {
     display: block;
@@ -312,15 +281,11 @@ img {
   display: block;
   /* min-height: 400px; */
   border-radius: 10px;
-  -webkit-transition: -webkit-box-shadow ease-in 0.5s;
-  transition: -webkit-box-shadow ease-in 0.5s;
   transition: box-shadow ease-in 0.5s;
-  transition: box-shadow ease-in 0.5s, -webkit-box-shadow ease-in 0.5s;
 }
 
 .card-link:hover {
-  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
-          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
 }
 
 .card {
@@ -328,7 +293,6 @@ img {
   margin-bottom: 20px;
   border-radius: 10px;
 }
-
 @media screen and (max-width: 767px) {
   .card {
     width: 100%;
@@ -340,7 +304,6 @@ img {
 .card:not(:nth-child(3n)) {
   margin-right: 20px;
 }
-
 @media screen and (max-width: 767px) {
   .card:not(:nth-child(3n)) {
     margin-right: auto;
@@ -367,14 +330,12 @@ img {
   position: absolute;
   top: 150%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   display: block;
-  content: 'You can contact me with the following media';
+  content: "You can contact me with the following media";
   text-align: center;
   font-size: 25px;
 }
-
 @media screen and (max-width: 767px) {
   #contact .sub-title::after {
     font-size: 20px;
@@ -382,35 +343,32 @@ img {
 }
 
 .contact-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: center;
   margin-top: 150px;
 }
 
 .sns-wrapper {
   opacity: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-transition: font-size ease-in 1s;
+  transform: translateX(-50%);
   transition: font-size ease-in 1s;
+  margin-right: 30px;
+}
+
+.sns-wrapper:last-child {
+  margin-right: 0;
 }
 
 .sns-wrapper:nth-child(1).on {
-  -webkit-animation: slideIn 2s linear 1 forwards;
-          animation: slideIn 2s linear 1 forwards;
+  animation: slideIn 2s linear 1 forwards;
 }
 
 .sns-wrapper:nth-child(2).on {
-  -webkit-animation: slideIn 2s linear 0.5s 1 forwards;
-          animation: slideIn 2s linear 0.5s 1 forwards;
+  animation: slideIn 2s linear 0.5s 1 forwards;
 }
 
 .sns-wrapper:nth-child(3).on {
-  -webkit-animation: slideIn 2s linear 1s 1 forwards;
-          animation: slideIn 2s linear 1s 1 forwards;
+  animation: slideIn 2s linear 1s 1 forwards;
 }
 
 .sns-icon {
@@ -418,7 +376,6 @@ img {
   font-size: 100px;
   color: #fff;
 }
-
 @media screen and (max-width: 767px) {
   .sns-icon {
     font-size: 80px;
@@ -452,11 +409,8 @@ img {
 /* from here belongs to the loading animation */
 .layer {
   height: 100vh;
-  background-color: #2c2a2a;
-  -webkit-transition: -webkit-transform 1s ease-out;
-  transition: -webkit-transform 1s ease-out;
+  background-color: rgb(44, 42, 42);
   transition: transform 1s ease-out;
-  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
   position: fixed;
   width: 100%;
   z-index: 2;
@@ -468,8 +422,7 @@ img {
   position: relative;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .ball {
@@ -477,7 +430,7 @@ img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #ffff;
+  background-color: white;
 }
 
 .ball:nth-child(1) {
@@ -529,54 +482,23 @@ img {
 }
 
 /* animation definition */
-@-webkit-keyframes loading {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    opacity: 0.5;
-  }
-}
 @keyframes loading {
   from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
   to {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
     opacity: 0.5;
   }
 }
-
-@-webkit-keyframes slideIn {
-  from {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 @keyframes slideIn {
   from {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     opacity: 0;
   }
   to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
