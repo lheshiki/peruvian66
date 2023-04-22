@@ -209,6 +209,10 @@ img {
   text-align: center;
 }
 
+.aboutBtn.colored {
+  border: solid rgb(101, 191, 149);
+}
+
 #skills {
   background-color: #fff;
 }
