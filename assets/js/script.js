@@ -4,7 +4,8 @@
 
 // kick off the polyfill!
 // smoothscroll.polyfill();
-
+// 今現在の色
+let nowColor = "";
 document.addEventListener("click", e => {
   const target = e.target;
   // clickした要素がclass属性、js-smooth-scrollを含まない場合は処理を中断
@@ -29,15 +30,22 @@ document.addEventListener("click", e => {
 
 // Header font-color change
 let skillsSec = document.querySelector('#skills');
+let contactSec = document.querySelector('#contact');
+let mediaSec = document.querySelector("#media");
 let navItems = document.querySelectorAll('.nav-item');
 window.addEventListener('scroll',function () {
   let pageY = window.pageYOffset;
   let skillsY = skillsSec.getBoundingClientRect().top + pageY;
-  if (pageY + 16 > skillsY) {
+  let mediaY = mediaSec.getBoundingClientRect().top + pageY;
+  if(pageY + 16 > mediaY){
+    navItems.forEach(navItem =>{
+      navItem.classList.remove('on');
+    });
+  }else if (pageY + 16 > skillsY) {
     navItems.forEach(navItem =>{
       navItem.classList.add('on');
     });
-  }else{
+  } else{
     navItems.forEach(navItem =>{
       navItem.classList.remove('on');
     });
@@ -80,19 +88,90 @@ window.addEventListener('scroll',function () {
   let pageY =  window.pageYOffset;
   if (skillBarY < pageY + windowHeight) {
     if (!skillContainer.classList.contains('activated')) {
-      // skillBars.forEach(skillBar => {
-      //   skillBar.classList.add('on');
-      //   skillBar.style.width = `${skillScores[i]}%`;
-      // });
       for(i=0; i<skillPoints.length; i++){
         skillBars[i].classList.add('on');
         document.querySelectorAll('.skill-bar-score')[i].style.width = `${skillScores[i]}%`;
+        document.querySelectorAll('.skill-bar-score')[i].style.backgroundColor = nowColor;
         showScore(skillScores[i],skillPoints[i]);
       };
       skillContainer.classList.add('activated');
     }
   }
 });
+
+// change the background color after scrolling
+let triggerElements = document.querySelectorAll('.js-changeColor');
+let changeTarget = document.querySelector('.bg');
+let loadingTarget = document.querySelector('.layer');
+let topBtn = document.querySelector('.top-btn');
+let topBtnLine = document.querySelector(".top-btn-line");
+window.addEventListener("scroll",function () {
+  let positions = getPositions(triggerElements);
+  let pageY = window.pageYOffset;
+  switch (true) {
+    case pageY + windowHeight > positions[3]:
+      changeTarget.style.backgroundColor = "rgb(101, 191, 149)";
+      changeTarget.style.color = "rgb(101, 191, 149)";
+      loadingTarget.style.backgroundColor = "rgb(101, 191, 149)";
+      nowColor = "rgb(101, 191, 149)";
+      for (const skillBar of document.querySelectorAll('.skill-bar-score')) {
+        skillBar.style.backgroundColor = nowColor;
+      }
+      topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
+      topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
+      topBtn.style.border = `solid 2px ${nowColor}`;
+      break;
+    case pageY + windowHeight > positions[2]:
+      changeTarget.style.backgroundColor = "rgb(201, 70, 131)";
+      changeTarget.style.color = "rgb(201, 70, 131)"
+      loadingTarget.style.backgroundColor = "rgb(201, 70, 131)";
+      nowColor = "rgb(201, 70, 131)";
+      for (const skillBar of document.querySelectorAll('.skill-bar-score')) {
+        skillBar.style.backgroundColor = nowColor;
+      }
+      topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
+      topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
+      topBtn.style.border = `solid 2px ${nowColor}`;
+      break;
+    case pageY + windowHeight > positions[1]:
+      changeTarget.style.backgroundColor = "rgb(155, 114, 100)";
+      changeTarget.style.color = "rgb(155, 114, 100)";
+      loadingTarget.style.backgroundColor = "rgb(155, 114, 100)";
+      nowColor = "rgb(155, 114, 100)";
+      for (const skillBar of document.querySelectorAll('.skill-bar-score')) {
+        skillBar.style.backgroundColor = nowColor;
+      }
+      topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
+      topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
+      topBtn.style.border = `solid 2px ${nowColor}`;
+      break;
+    case pageY + windowHeight > positions[0] && pageY !== 0:
+      changeTarget.style.backgroundColor = "rgb(225, 152, 110)";
+      changeTarget.style.color = "rgb(225, 152, 110)";
+      loadingTarget.style.backgroundColor = "rgb(225, 152, 110)";
+      nowColor = "rgb(225, 152, 110)";
+      for (const skillBar of document.querySelectorAll('.skill-bar-score')) {
+        skillBar.style.backgroundColor = nowColor;
+      }
+      topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
+      topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
+      topBtn.style.border = `solid 2px ${nowColor}`;
+      break;
+    case pageY == 0:
+      changeTarget.style.backgroundColor = "rgb(92, 142, 194)";
+      loadingTarget.style.backgroundColor = "rgb(92, 142, 194)";
+      nowColor = "rgb(92, 142, 194)";
+      for (const skillBar of document.querySelectorAll('.skill-bar-score')) {
+        skillBar.style.backgroundColor = nowColor;
+      }
+      topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
+      topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
+      topBtn.style.border = `solid 2px ${nowColor}`;
+      break;
+    default:
+      break;
+  }
+})
 
 
 // icon slidein
@@ -116,7 +195,6 @@ setInterval(slider, 5000);
 
 function slider() {
   targets.forEach(target => {
-    let test = target.classList.contains('on');
     if (target.classList.contains('on')) {
       target.classList.remove('on');
     };
@@ -136,11 +214,22 @@ function closeUp(target) {
   target.style.transform = 'translateY(-100%)';
 }
 
-// bubbly background
-bubbly({
-  colorStart:"#000",
-  colorStop:"#000",
-  blur:1,
-  bubbles:100
-});
+function getPositions (changeTriggers) {
+  let triggersY = [];
+  let pageY = window.pageYOffset;
+  for (let i = 0; i < changeTriggers.length; i++) {
+    let triggerY = changeTriggers[i].getBoundingClientRect().top + pageY;
+    triggersY.push(triggerY);
+  }
+  return triggersY
+}
+
+// go to top btn
+topBtn.addEventListener("click",()=>{
+  const top = 0;
+  window.scrollTo({
+    top,
+    behavior: "smooth"
+  });
+})
 
