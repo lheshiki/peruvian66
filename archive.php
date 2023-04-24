@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <!-- top header -->
 <?php get_template_part('template-parts/global-header'); ?>
-<body id="works-archive">
-  <div class="works-bg">
-    <section id="works" class="section">
-      <h2 class="sub-title">Works</h2>
+<body id="media-archive">
+  <div class="media-bg">
+    <section id="media" class="section js-changeColor">
+      <h2 class="sub-title">Media</h2>
       <div class="content-inner">
         <section class="card-container">
           <?php

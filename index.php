@@ -258,7 +258,7 @@
               <article id="post-<?php the_ID(); ?>" class="card">
                 <a href="<?php the_permalink(); ?>" class="card-link">
                   <div class="img-wrapper">
-                    <img src="<?php echo get_the_post_thumbnail(get_the_ID(), 'medium'); ?>" alt="<?php echo get_the_title(); ?>" />
+                    <img src="<?php echo the_post_thumbnail_url('medium'); ?>" alt="<?php echo get_the_title(); ?>" />
                   </div>
                   <h3 class="card-title"><?php echo get_the_title(); ?></h3>
                 </a>
@@ -279,6 +279,7 @@
           endif;
           ?>
         </section>
+        <a href="/media/" class="aboutBtn colored">Click to see more media</a>
       </div>
     </section>
     <section id="contact" class="section js-changeColor">

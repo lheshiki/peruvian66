@@ -336,6 +336,15 @@ img {
   border-radius: 10px 10px 0 0;
 }
 
+#works .sub-title {
+  color: #fff;
+  position: relative;
+}
+
+#works .card {
+  background-color: white;
+}
+
 /* from here belongs to media section */
 #media .sub-title {
   color: #fff;
@@ -564,4 +573,79 @@ img {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#works-archive {
+  color: rgb(201, 70, 131);
+}
+
+.works-bg {
+  background-color: rgb(201, 70, 131);
+  min-height: 100vh;
+}
+
+#works-archive #works {
+  background-color: transparent;
+}
+
+#works-archive footer {
+  background-color: rgb(201, 70, 131);
+}
+
+#media-archive {
+  color: rgb(101, 191, 149);
+}
+
+.media-bg {
+  background-color: rgb(101, 191, 149);
+  min-height: 100vh;
+}
+
+#media-archive #media {
+  background-color: transparent;
+}
+
+#media-archive footer {
+  background-color: rgb(101, 191, 149);
+}
+
+.article-content {
+  background-color: white;
+  font-family: initial;
+  color: #000;
+  padding: 20px 10px;
+  max-width: 940px;
+}
+
+.article-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+  .article-title {
+    font-size: 2em;
+  }
+}
+
+.article-content * {
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.article-content h2 {
+  text-align: left;
+  font-size: 1.6rem;
+  color: #000000;
+  margin: 20px 0;
+  background-color: #f4f4f4;
+  padding: 15px 5px 15px 20px;
+  border-left: 20px solid rgb(101, 191, 149);
+  line-height: 1.4em;
+}
+@media screen and (max-width: 767px) {
+  .article-content h2 {
+    font-size: 1.4em;
+  }
 }/*# sourceMappingURL=style.css.map */

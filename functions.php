@@ -12,7 +12,9 @@ function add_theme_scripts(){
 	wp_enqueue_style("reset",get_template_directory_uri()."/assets/css/reset.css");
 	wp_enqueue_style("style",get_template_directory_uri()."/assets/css/style.css",array(),"1.0.0");
 	wp_enqueue_script( 'utiliy', get_theme_file_uri()."/assets/js/smooth-scroll.js",array(), '1.0.0',true);
-	wp_enqueue_script( 'js', get_template_directory_uri()."/assets/js/script.js",array(), '1.0.0',true);
+	if (is_front_page()) {
+		wp_enqueue_script( 'js', get_template_directory_uri()."/assets/js/script.js",array(), '1.0.0',true);		
+	}
 }
 add_action("wp_enqueue_scripts","add_theme_scripts");
 
@@ -37,3 +39,12 @@ function custom_post() {
 	);
 }
 add_action('init', 'custom_post');
+function post_has_archive( $args, $post_type ) {
+	if ( 'post' == $post_type ) {
+		$args['rewrite'] = true;
+		$args['has_archive'] = 'media'; //任意のスラッグ名
+	}
+	return $args;
+}
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+?>
