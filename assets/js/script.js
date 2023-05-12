@@ -187,6 +187,39 @@ window.addEventListener('scroll',function () {
   }
 })
 
+// swiper
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  // slidesPerView: 3,
+  spaceBetween: 50,
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  breakpoints: {
+    767:{
+      slidesPerView: 4,
+      spaceBetween: 100,
+    }
+  },
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  autoplay: {
+    delay: 5000,
+  },
+});
+
 // slider
 let targets = document.querySelectorAll('.js-slider-target');
 let index = 0;

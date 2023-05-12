@@ -15,7 +15,12 @@
               <article id="post-<?php the_ID(); ?>" class="card">
                 <a href="<?php the_permalink(); ?>" class="card-link">
                   <div class="img-wrapper">
+                    <?php // echo the_post_thumbnail_url('medium'); ?>
+                    <?php if(has_post_thumbnail()):?>
                     <img src="<?php echo the_post_thumbnail_url('medium'); ?>" alt="<?php echo get_the_title(); ?>" />
+                    <?php else: ?>
+                      <img src="https://placehold.jp/800x513.png" alt="placehold" />
+                    <?php endif ?>
                   </div>
                   <h3 class="card-title"><?php echo get_the_title(); ?></h3>
                 </a>

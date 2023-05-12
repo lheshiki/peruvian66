@@ -25,6 +25,7 @@ a{
 
 img{
   max-width: 100%;
+  height: auto;
 }
 
 .bg{
@@ -130,70 +131,40 @@ img{
   color: #fff;
 }
 
+.biography{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  column-gap: 5%;
+  margin-top: 50px;
+  @include sp{
+    display: block;
+    text-align: center;
+  }
+}
+
+.biography-photo{
+  border-radius: 50%;
+}
+
+.biography-text{
+  width: 50%;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  @include sp{
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
 .profile-topic{
   color: #fff;
-  font-size: 35px;
-
-  @include sp{
-    font-size: 25px;
-  }
-}
-
-.profile-container{
-  width: 300px;
-  text-align: center;
-  position: relative;
-  margin: 100px auto 0;
-
-  @include sp{
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-.profile-move-wrapper{
-  width: 300px;
-  top: 0;
-  left: 50%;
-  position: absolute;
-  opacity: 0;
-  transform: translateX(-50%);
-  transition: opacity 2s ease-out;
-
-  @include sp{
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-.profile-move-wrapper.default{
-  position: static;
-  transform: translateX(0);
-}
-
-.profile-move-wrapper.on{
-  opacity: 1;
-}
-
-.profile-pic-wrapper{
-  overflow: hidden;
-}
-
-.profile-pic-wrapper img{
-  margin-top: 20px;
-  border-radius: 50%;
-  width: 100%;
-  height: auto;
-  @include sp{
-    width: 80%;
-    height: auto;
-  }
-}
-
-.profile-content{
-  color: #fff;
   font-size: 25px;
-  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  text-align: center;
+  @include sp{
+    font-size: 18px;
+  }
 }
 
 .aboutBtn{
@@ -206,8 +177,13 @@ img{
   text-align: center;
 }
 
-.aboutBtn.colored{
+.aboutBtn.colored-green{
   border: solid rgb(101, 191, 149);
+}
+
+.aboutBtn.colored-pink{
+  border: solid rgb(201, 70, 131);
+  color: rgb(201, 70, 131);
 }
 
 // from here starts the skills section
@@ -289,7 +265,6 @@ img{
   margin: 100px auto 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   column-gap: 20px;
 
   @include sp{
@@ -341,7 +316,7 @@ img{
 }
 
 // from here belongs to works section
-#works .sub-title{
+#works-archive #works .sub-title{
   color: #fff;
   position: relative;
 }
@@ -640,5 +615,153 @@ img{
   line-height: 1.4em;
   @include sp{
     font-size: 1.4em;
+  }
+}
+
+// from here works single page
+.works-content{
+  background-color: white;
+  font-family: initial;
+  color: #000;
+  padding: 20px 50px 50px;
+  line-height: 1.5;
+  @include sp{
+    font-size: 0.95rem;
+    padding: 20px 20px 50px;
+  }
+}
+
+.works-article-title{
+  text-align: center;
+  margin: 20px auto;
+}
+
+.works-article-title span{
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 20px;
+  position: relative;
+  @include sp{
+    font-size: 1.8rem;
+  }
+}
+
+.works-article-title span::before,
+.works-article-title span::after{
+  content: "";
+  display: inline-block;
+  width: 18%;
+  height: 5px;
+  background-color: #cf2e9193;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.works-article-title span::before{
+  margin-right: 20px;
+}
+
+.works-article-title span::after{
+  margin-left: 20px;
+}
+
+.works-skills-wrap{
+  margin: 30px auto;
+}
+
+.works-article-title.works-skills-title span{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.works-category-belt{
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.works-category-list{
+  display: flex;
+}
+
+.works-category-list li{
+  display: inline-block;
+  padding: 10px;
+  font-size: bold;
+  color: #fff;
+  background-color: #0F9D58;
+}
+
+.works-img-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.works-img-list li:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.works-img-list li{
+  width: 160px;
+  @include sp{
+    width: 80px;
+  }
+}
+
+.works-main-img-wrap{
+  text-align: center;
+}
+
+.works-container{
+  margin-top: 30px;
+}
+
+.twitter-wrap{
+  max-width: 500px;
+  margin: 30px auto 0;
+}
+
+#twitter .sub-title{
+  color: #fff;
+}
+
+// swiper
+.swiper-wrap{
+  margin-top: 100px;
+}
+
+.swiper {
+  min-height: 368px;
+  margin-top: 50px;
+  @include sp {
+    min-height: 55vw;
+  }
+}
+
+.swiper-slide img{
+  width: 100%;
+}
+
+.swiper-slide-active img,
+.swiper-slide-active .profile-topic{
+  animation: shake 1s ease-in-out 1 forwards normal;
+}
+
+
+@keyframes shake {
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(0.8);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
   }
 }

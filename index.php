@@ -23,47 +23,52 @@
     </div>
     <section id="about" class="section js-changeColor">
       <h2 class="sub-title">About me</h2>
+      
       <div class="content-inner">
-        <div class="profile-container">
-          <div class="profile-move-wrapper js-slider-target default on">
-            <span class="profile-topic">FOOD</span>
-            <div class="profile-pic-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img04.jpeg" alt="profile" width="393" height="393" />
-            </div>
-          </div>
-          <div class="profile-move-wrapper js-slider-target">
-            <span class="profile-topic">SPORTS</span>
-            <div class="profile-pic-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img05.JPG" alt="profile" width="567" height="567" />
-            </div>
-          </div>
-          <div class="profile-move-wrapper js-slider-target">
-            <span class="profile-topic">LANGUAGE</span>
-            <div class="profile-pic-wrapper">
-              <i class="fas fa-globe-americas"></i>
-              <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img01.jpg" alt="profile"> -->
-            </div>
-          </div>
-          <div class="profile-move-wrapper js-slider-target">
-            <span class="profile-topic">SKIN DIVING</span>
-            <div class="profile-pic-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img03.JPG" alt="profile" width="298" height="298" />
-            </div>
-          </div>
-          <div class="profile-move-wrapper js-slider-target">
-            <span class="profile-topic">SIT COMS</span>
-            <div class="profile-pic-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img02.jpeg" alt="profile" width="440" height="440" />
-            </div>
-          </div>
-          <p class="profile-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia,molestiae quas vel sint commodi repudiandae consequuntur
-            voluptatum laborumnumquam blanditiis harum quisquam eius sed odit
-            fugiat iusto fuga praesentiumoptio, eaque rerum! Provident
-            similique accusantium nemo autem.
-          </p>
+        <div class="biography">
+          <img class="biography-photo" src="<?php echo get_template_directory_uri(); ?>/assets/img/img01.jpg" alt="avatar">
+          <p class="biography-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum iusto dolorem alias ea odit. Quisquam architecto illo sapiente cumque dolorum laudantium at nulla deserunt tenetur modi necessitatibus, harum recusandae animi!</p>
         </div>
+        <section class="swiper-wrap">
+        <h2 class="sub-title">Hobbies</h2>
+          <!-- Slider main container -->
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/ramen.png" alt="FOOD"width="298" height="298" />
+                <p class="profile-topic">FOOD</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/balls-sports.png" alt="SPORTS" width="298" height="298" />
+                <p class="profile-topic">SPORTS</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/languages.png" alt="profile" width="298" height="298" />
+                <p class="profile-topic">LANGUAGE</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/coding.png" alt="profile" width="298" height="298" />
+                <p class="profile-topic">Programming</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/scuba.png" alt="profile" width="298" height="298" />
+                <p class="profile-topic">SKIN DIVING</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/netflix.png" alt="profile" width="298" height="298" />
+                <p class="profile-topic">NETFLIX</p>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+        </section>
+        
         <a href="" class="aboutBtn">Wanna know more?</a>
       </div>
     </section>
@@ -222,7 +227,11 @@
               <article id="post-<?php the_ID(); ?>" class="card">
                 <a href="<?php the_permalink(); ?>" class="card-link">
                   <div class="img-wrapper">
+                    <?php if(has_post_thumbnail()):?>
                     <img src="<?php echo the_post_thumbnail_url('medium'); ?>" alt="<?php echo get_the_title(); ?>" />
+                    <?php else: ?>
+                      <img src="https://placehold.jp/800x513.png" alt="placehold" />
+                    <?php endif ?>
                   </div>
                   <h3 class="card-title"><?php echo get_the_title(); ?></h3>
                 </a>
@@ -243,11 +252,11 @@
           endif;
           ?>
         </section>
-        <a href="<?php echo get_post_type_archive_link( 'works' ); ?>" class="aboutBtn colored">Wanna see more?</a>
+        <a href="<?php echo get_post_type_archive_link( 'works' ); ?>" class="aboutBtn colored-green">Wanna see more?</a>
       </div>
     </section>
     <section id="media" class="section js-changeColor">
-      <h2 class="sub-title">Media</h2>
+      <h2 class="sub-title">News</h2>
       <div class="content-inner">
         <section class="card-container">
           <?php
@@ -279,7 +288,15 @@
           endif;
           ?>
         </section>
-        <a href="/media/" class="aboutBtn colored">Click to see more media</a>
+        <a href="/media/" class="aboutBtn colored-green">Click to see more media</a>
+      </div>
+    </section>
+    <section id="twitter" class="section">
+      <div class="content-inner">
+        <h2 class="sub-title">Twitter</h2>
+        <div class="twitter-wrap">
+          <a class="twitter-timeline" href="https://twitter.com/peruEngineer22?ref_src=twsrc%5Etfw">Tweets by peruEngineer22</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
       </div>
     </section>
     <section id="contact" class="section js-changeColor">
