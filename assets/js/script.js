@@ -105,6 +105,7 @@ let changeTarget = document.querySelector('.bg');
 let loadingTarget = document.querySelector('.layer');
 let topBtn = document.querySelector('.top-btn');
 let topBtnLine = document.querySelector(".top-btn-line");
+let aboutBtn = document.querySelector("#works .aboutBtn"); 
 window.addEventListener("scroll",function () {
   let positions = getPositions(triggerElements);
   let pageY = window.pageYOffset;
@@ -120,6 +121,11 @@ window.addEventListener("scroll",function () {
       topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
       topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
       topBtn.style.border = `solid 2px ${nowColor}`;
+     
+      if (aboutBtn.classList.contains("colored-pink")) {
+        aboutBtn.classList.remove("colored-pink");
+        aboutBtn.classList.add("colored-green");
+      }
       break;
     case pageY + windowHeight > positions[2]:
       changeTarget.style.backgroundColor = "rgb(201, 70, 131)";
@@ -132,6 +138,10 @@ window.addEventListener("scroll",function () {
       topBtnLine.style.borderTop = `solid 2px ${nowColor}`;
       topBtnLine.style.borderLeft = `solid 2px ${nowColor}`;
       topBtn.style.border = `solid 2px ${nowColor}`;
+      if (aboutBtn.classList.contains("colored-green")) {
+        aboutBtn.classList.remove("colored-green");
+        aboutBtn.classList.add("colored-pink");
+      }
       break;
     case pageY + windowHeight > positions[1]:
       changeTarget.style.backgroundColor = "rgb(155, 114, 100)";
@@ -189,13 +199,7 @@ window.addEventListener('scroll',function () {
 
 // swiper
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // slidesPerView: 3,
   spaceBetween: 50,
-  // pagination: {
-  //   el: ".swiper-pagination",
-  //   clickable: true,
-  // },
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -220,24 +224,6 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-// slider
-let targets = document.querySelectorAll('.js-slider-target');
-let index = 0;
-
-setInterval(slider, 5000);
-
-function slider() {
-  targets.forEach(target => {
-    if (target.classList.contains('on')) {
-      target.classList.remove('on');
-    };
-  });
-  index++;
-  if (index > targets.length -1) {
-    index = 0;
-  }
-  targets[index].classList.add('on');
-}
 
 // loading animation
 let layer = document.querySelector('.layer');

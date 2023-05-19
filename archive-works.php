@@ -14,8 +14,12 @@
           ?>
               <article id="post-<?php the_ID(); ?>" class="card">
                 <a href="<?php the_permalink(); ?>" class="card-link">
+                  <span class="card-category">
+                    <?php 
+                      $terms = get_the_terms(get_the_ID(),'category');
+                      echo $terms[0]->name; ?>
+                  </span>
                   <div class="img-wrapper">
-                    <?php // echo the_post_thumbnail_url('medium'); ?>
                     <?php if(has_post_thumbnail()):?>
                     <img src="<?php echo the_post_thumbnail_url('medium'); ?>" alt="<?php echo get_the_title(); ?>" />
                     <?php else: ?>
@@ -40,9 +44,24 @@
           <?php
           endif;
           ?>
+          <!-- <nav class="navigation pagination" aria-label=" ">
+            <h2 class="screen-reader-text"> </h2>
+            <div class="nav-links">
+              <span aria-current="page" class="page-numbers current">1</span>
+              <a class="page-numbers" href="http://localhost:8023/works/page/2/">2</a>
+              <a class="next page-numbers" href="http://localhost:8023/works/page/2/"><span class="arrow">→</span></a>
+            </div>
+          </nav> -->
         </section>
+        <?php
+          $args = array(
+              'mid_size' => 1,
+              'prev_text' => '<span class="arrow">←</span>',
+              'next_text' => '<span class="arrow">→</span>',
+          );
+          the_posts_pagination($args);
+          ?>
       </div>
     </section>
   </div>
-</body>
 <?php get_footer(); ?>

@@ -15,7 +15,7 @@
           <a href="/about/">About</a>
         </li>
         <li class="nav-item">
-          <a href="/contact/">Contact</a>
+          <a href="/#contact">Contact</a>
         </li>
       </ul>
     </nav>

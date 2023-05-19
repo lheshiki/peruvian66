@@ -26,7 +26,11 @@
                   <h1 class="works-article-title"><span><?php the_title(); ?></span></h1>
                   <p><?php echo $cfs->get('works_description'); ?></p><!--ここにCFSでテキスト（description）取得 -->
                   <div class="works-skills-wrap">
-                    <h2 class="works-article-title works-skills-title"><span>開発技術</span></h2>
+                    <h2 class="works-article-title works-skills-title"><span>役割</span></h2>
+                    <p><?php echo $cfs->get('works_position'); ?></p><!--ここにスキル(skill)を出力 -->
+                  </div>
+                  <div class="works-skills-wrap">
+                    <h2 class="works-article-title works-skills-title"><span>スキル</span></h2>
                     <p><?php echo $cfs->get('works_skills'); ?></p><!--ここにスキル(skill)を出力 -->
                   </div>
                 </div>
