@@ -22,6 +22,11 @@
                     <ul class="works-category-list">
                       <li><?php echo $cat->cat_name;?></li>  <!--ここにカテゴリーを出力 -->
                     </ul>
+                    <div>
+                      <time datetime="<?php the_date("Y-m-d"); ?>" class="works-date">公開日:<?php echo get_the_date("Y-m-d"); ?></time>
+                      <time datetime="<?php the_modified_date("Y-m-d"); ?>" class="works-date">更新日:<?php echo get_the_modified_date("Y-m-d"); ?></time>
+                    </div>
+                    
                   </div>
                   <h2 class="works-article-title"><span><?php the_title(); ?></span></h2>
                   <p><?php echo $cfs->get('works_description'); ?></p><!--ここにCFSでテキスト（description）取得 -->

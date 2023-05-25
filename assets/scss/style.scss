@@ -691,6 +691,10 @@ img{
   }
 }
 
+.works-date{
+  display: block;
+}
+
 .works-article-title{
   text-align: center;
   margin: 20px auto;
@@ -769,6 +773,9 @@ img{
 .works-category-belt{
   margin-bottom: 10px;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .works-category-list{

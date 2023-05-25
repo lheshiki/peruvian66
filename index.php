@@ -80,10 +80,18 @@
           <section class="skill-block js-skill-bar-Y">
             <h3 class="skill-heading">FRONTEND SKILLS</h3>
             <div class="skill-wrapper js-skill-bar">
-              <span class="skill-title">Javascript</span>
+              <span class="skill-title">JavaScript/TypeScript</span>
               <div class="skill-bar">
                 <div class="skill-bar-score">
                   <span class="skill-point" data-point="95">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-wrapper js-skill-bar">
+              <span class="skill-title">React/React Native</span>
+              <div class="skill-bar">
+                <div class="skill-bar-score">
+                  <span class="skill-point" data-point="90">0</span>
                 </div>
               </div>
             </div>
@@ -92,14 +100,6 @@
               <div class="skill-bar">
                 <div class="skill-bar-score">
                   <span class="skill-point" data-point="95">0</span>
-                </div>
-              </div>
-            </div>
-            <div class="skill-wrapper js-skill-bar">
-              <span class="skill-title">TypeScript</span>
-              <div class="skill-bar">
-                <div class="skill-bar-score">
-                  <span class="skill-point" data-point="90">0</span>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@
               </div>
             </div>
             <div class="skill-wrapper js-skill-bar">
-              <span class="skill-title">WORDPRESS</span>
+              <span class="skill-title">WordPress</span>
               <div class="skill-bar">
                 <div class="skill-bar-score">
                   <span class="skill-point" data-point="90">0</span>
@@ -131,7 +131,7 @@
               </div>
             </div>
             <div class="skill-wrapper js-skill-bar">
-              <span class="skill-title">python</span>
+              <span class="skill-title">Python</span>
               <div class="skill-bar">
                 <div class="skill-bar-score">
                   <span class="skill-point" data-point="60">0</span>
@@ -227,6 +227,11 @@
           ?>
               <article id="post-<?php the_ID(); ?>" <?php post_class('card');?>>
                 <a href="<?php the_permalink(); ?>" class="card-link">
+                  <span class="card-category">
+                    <?php 
+                      $terms = get_the_terms(get_the_ID(),'category');
+                      echo $terms[0]->name; ?>
+                  </span>
                   <div class="img-wrapper">
                     <?php if(has_post_thumbnail()):?>
                     <img src="<?php echo the_post_thumbnail_url('medium'); ?>" alt="<?php echo get_the_title(); ?>" />
@@ -257,7 +262,7 @@
       </div>
     </section>
     <section id="media" class="section js-changeColor">
-      <h2 class="sub-title">News</h2>
+      <h2 class="sub-title">Blog</h2>
       <div class="content-inner">
         <div class="card-container">
           <p class="u-comming-soon">Coming soon...</p>

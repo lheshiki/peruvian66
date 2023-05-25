@@ -12,7 +12,7 @@
           <a href="#works" class="js-smooth-scroll">Works</a>
         </li>
         <li class="nav-item">
-          <a href="#media" class="js-smooth-scroll">Media</a>
+          <a href="#media" class="js-smooth-scroll">Blog</a>
         </li>
         <li class="nav-item">
           <a href="#contact" class="js-smooth-scroll">Contact</a>

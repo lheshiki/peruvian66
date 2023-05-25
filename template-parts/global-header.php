@@ -9,11 +9,11 @@
           <a href="/works/">Works</a>
         </li>
         <li class="nav-item">
-          <a href="/media/">Media</a>
+          <a href="/media/">Blog</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="/about/">About</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a href="/#contact">Contact</a>
         </li>
