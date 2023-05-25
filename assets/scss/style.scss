@@ -268,6 +268,7 @@ img{
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
+  font-family: 'Oswald', sans-serif;
 
   @include sp{
     display: block;
