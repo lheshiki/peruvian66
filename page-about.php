@@ -2,7 +2,8 @@
 <!-- top header -->
 <?php get_template_part('template-parts/global-header'); ?>
 
-<body id="works-archive">
+<body <?php body_class(); ?> id="works-archive">
+<?php wp_body_open(); ?>
   <div class="works-bg">
     <section id="works" class="section">
       <h2 class="sub-title">about</h2>
@@ -13,7 +14,7 @@
             while (have_posts()) :
               the_post();
           ?>
-              <article id="post-<?php the_ID(); ?>" class="works-content">
+              <article id="post-<?php the_ID(); ?>" <?php post_class('works-content');?>>
                 <div class="works-left">
                   <h1 class="works-article-title"><span><?php the_title(); ?></span></h1>
                   <p>Ruby on Railsのチュートリアルに沿って制作したWebアプリケーションです。Twitterのように小さなコメントを投稿したり、ユーザーをフォローして極簡単なコミュケーションが取れます。このチュートリアルを通してテスト駆動開発、CRUD、ユーザー登録などの基礎的な考え方を学ぶことができました。今後は実務レベルでこれらの技術を活用することを考えています。</p>

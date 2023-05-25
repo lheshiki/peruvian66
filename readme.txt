@@ -1,0 +1,11 @@
+Theme Name: Peruvian66
+Text Domain: peruvian66.com
+Version: 1
+Tested up to: 6.2
+Requires PHP: 5.2.4
+Theme URI: https://peruvian66.com/
+Author: Luis Heshiki
+Author URI: https://peruvian66.com/
+Description: This is the web portfolio for the front-end engineer Luis Heshiki in which he shows to his audience his ablities through his works.
+License: These theme is not licensed and it is created exclusively for Luis Heshiki
+License URI: None

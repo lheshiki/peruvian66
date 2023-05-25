@@ -1,21 +1,23 @@
 <?php get_header(); ?>
+<body <?php body_class(); ?> id="media-archive">
+<?php wp_body_open(); ?>
 <!-- top header -->
 <?php get_template_part('template-parts/global-header'); ?>
-<body id="media-archive">
   <div class="media-bg">
-    <section id="media" class="section">
+    <div id="media" class="section">
       <div class="content-inner">
-        <section class="article-container">
+        <div class="article-container">
           <?php
           if (have_posts()) :
             while (have_posts()) :
               the_post();
           ?>
-              <article id="post-<?php the_ID(); ?>" class="article-content">
-                <h1 class="article-title"><?php the_title(); ?></h1>
+              <article id="post-<?php the_ID(); ?>" <?php post_class('article-content');?>>
+                <h2 class="article-title"><?php the_title(); ?></h2>
                 <?php the_content(); ?>
               </article>
             <?php
+            wp_link_pages();
             endwhile;
           else :
             ?>
@@ -25,9 +27,8 @@
           <?php
           endif;
           ?>
-        </section>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
-</body>
 <?php get_footer(); ?>

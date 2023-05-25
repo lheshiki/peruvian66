@@ -8,6 +8,7 @@ add_theme_support( 'automatic-feed-links' );
 // add_theme_support("title");
 add_theme_support("title-tag");
 
+// add scripts and stylesheets
 function add_theme_scripts(){
 	wp_enqueue_style("reset",get_template_directory_uri()."/assets/css/reset.css");
 	if (is_front_page()) {
@@ -25,6 +26,7 @@ function add_theme_scripts(){
 }
 add_action("wp_enqueue_scripts","add_theme_scripts");
 
+// fix the error thrown by HTML Checker about type=script
 function custom_theme_setup() {
   add_theme_support( 'html5', array( 'style', 'script') );
 }

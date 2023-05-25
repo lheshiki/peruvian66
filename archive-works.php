@@ -1,18 +1,22 @@
 <?php get_header(); ?>
+<body <?php body_class(); ?> id="works-archive">
+<?php wp_body_open(); ?>
 <!-- top header -->
 <?php get_template_part('template-parts/global-header'); ?>
-<body id="works-archive">
+<script>
+  console.log(window.opener.location);
+</script>
   <div class="works-bg">
     <section id="works" class="section">
       <h2 class="sub-title">Works</h2>
       <div class="content-inner">
-        <section class="card-container">
+        <div class="card-container">
           <?php
           if (have_posts()) :
             while (have_posts()) :
               the_post();
           ?>
-              <article id="post-<?php the_ID(); ?>" class="card">
+              <article id="post-<?php the_ID(); ?>" <?php post_class('card');?>>
                 <a href="<?php the_permalink(); ?>" class="card-link">
                   <span class="card-category">
                     <?php 
@@ -44,15 +48,7 @@
           <?php
           endif;
           ?>
-          <!-- <nav class="navigation pagination" aria-label=" ">
-            <h2 class="screen-reader-text"> </h2>
-            <div class="nav-links">
-              <span aria-current="page" class="page-numbers current">1</span>
-              <a class="page-numbers" href="http://localhost:8023/works/page/2/">2</a>
-              <a class="next page-numbers" href="http://localhost:8023/works/page/2/"><span class="arrow">→</span></a>
-            </div>
-          </nav> -->
-        </section>
+        </div>
         <?php
           $args = array(
               'mid_size' => 1,

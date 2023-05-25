@@ -1,13 +1,13 @@
 <?php get_header(); ?>
+<body <?php body_class(); ?> id="works-archive">
+<?php wp_body_open(); ?>
 <!-- top header -->
 <?php get_template_part('template-parts/global-header'); ?>
-
-<body id="works-archive">
   <div class="works-bg">
     <section id="works" class="section">
       <h2 class="sub-title">Works</h2>
       <div class="content-inner">
-        <section class="works-container">
+        <div class="works-container">
           <?php
           if (have_posts()) :
             while (have_posts()) :
@@ -16,14 +16,14 @@
               $cat = get_the_category();
               $cat = $cat[0];
           ?>
-              <article id="post-<?php the_ID(); ?>" class="works-content">
+              <article id="post-<?php the_ID(); ?>" <?php post_class('works-content');?>>
                 <div class="works-left">
                   <div class="works-category-belt">
                     <ul class="works-category-list">
                       <li><?php echo $cat->cat_name;?></li>  <!--ここにカテゴリーを出力 -->
                     </ul>
                   </div>
-                  <h1 class="works-article-title"><span><?php the_title(); ?></span></h1>
+                  <h2 class="works-article-title"><span><?php the_title(); ?></span></h2>
                   <p><?php echo $cfs->get('works_description'); ?></p><!--ここにCFSでテキスト（description）取得 -->
                   <div class="works-skills-wrap">
                     <h2 class="works-article-title works-skills-title"><span>役割</span></h2>
@@ -46,7 +46,6 @@
                     <?php 
                           endif;
                         endforeach;
-                      
                     ?>
                   </ul>
                   <div class="works-main-img-wrap">
@@ -61,12 +60,13 @@
                 <?php 
                   if ($cfs->get('works_url')):
                 ?>
-                <a class="aboutBtn colored-pink" target="_blank" href="<?php echo $cfs->get('works_url'); ?>">サイト閲覧はこちら</a>
+                <a class="aboutBtn colored-pink" target="_blank" rel="noopener noreferrer" href="<?php echo $cfs->get('works_url'); ?>">サイト閲覧はこちら</a>
                 <?php 
                   endif;
                 ?>
               </article>
             <?php
+            wp_link_pages();
             endwhile;
           else :
             ?>
@@ -76,9 +76,8 @@
           <?php
           endif;
           ?>
-        </section>
+        </div>
       </div>
     </section>
   </div>
-</body>
 <?php get_footer(); ?>
